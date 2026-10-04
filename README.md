@@ -1,10 +1,66 @@
 # dbt on Snowflake — HR Analytics
 
+This workspace demonstrates how to migrate a legacy Snowflake stored-procedure-based ETL pipeline into a modern dbt project. It contains the complete legacy pipeline (stored procedures, streams, and tasks), the sample HR dataset, and the fully migrated dbt project -- all in one repo. Clone the repository and follow along step by step to run the legacy pipeline first, then build and compare the dbt equivalent side by side.
+
+## Objective
+
+Provide a hands-on, end-to-end reference for migrating a Snowflake medallion-architecture pipeline from stored procedures, streams, and tasks to a dbt project. By running both pipelines against the same dataset, you can compare the orchestration-heavy legacy approach with the model-driven dbt approach and understand the tradeoffs involved.
+
+![Legacy vs dbt](reference/dbt-project-in-snowflake.png)
+
+---
+
+## Source Data — ER Diagram
+
+The `hr-analytics-data/` folder contains synthetic HR data organized as 10 entities covering employees, projects, skills, and access management.
+
+![ER Diagram](reference/er-diagram.png)
+
+### Full Load (`hr-analytics-data/full-data/`)
+
+Base dataset loaded once during initial setup.
+
+| # | File | Description |
+|---|---|---|
+| 1 | `01_departments_master.csv` | Department hierarchy (codes, names, active status) |
+| 2 | `02_offices_master.csv` | Office locations with city, country, and region |
+| 3 | `03_companies_master.csv` | Client companies with industry and classification |
+| 4 | `04_employees_master.csv` | Employee records with job title, level, department, and manager |
+| 5 | `05_projects_master.csv` | Projects with budget, status, dates, and owning department |
+| 6 | `06_employee_project_assignments.csv` | Staffing assignments with role and allocation percentage |
+| 7 | `07_employee_daily_access.csv` | Badge in/out events per employee per office |
+| 8 | `08_skills_master.csv` | Skill and technology catalog |
+| 9 | `09_employee_skills.csv` | Employee-skill proficiency mapping |
+| 10 | `10_project_technologies.csv` | Project technology requirements |
+
+### Daily Deltas (`hr-analytics-data/daily-delta/`)
+
+Incremental change files organized by day (day_01 through day_05). Each day contains only the entities that changed -- not all 10 files appear in every day. These deltas drive SCD Type-2 versioning in the Gold layer.
+
+---
+
 ## Legacy ETL Setup
 
-Run the SQL files in `legacy-etl-setup/` in order:
+The `legacy-etl-setup/` folder contains the original stored-procedure-based pipeline. Run these files in a Snowflake worksheet in the order listed below.
 
-1. `01-hr-analytics-deploy.sql` — Creates the database, schemas, tables, stored procedures, streams, and tasks.
-2. `02-put_full_load.sql` — Loads base CSV files into the Bronze layer and runs the Silver and Gold pipelines.
-3. `03-put_delta_load.sql` — Loads daily delta CSV files and processes them through the pipeline.
-4. `04-tear-down.sql` — Drops all objects created by the setup.
+### 01-hr-analytics-deploy.sql
+
+Creates the `HR_ANALYTICS` database with the full medallion architecture -- schemas, tables, stored procedures, streams, tasks, file formats, and an internal stage. After running this, you will have the complete database structure with all pipeline objects ready but no data loaded yet.
+
+### 02-put_full_load.sql
+
+Loads the base CSV files from `hr-analytics-data/full-data/` into the internal stage and runs COPY INTO to populate the Bronze tables. Then triggers the stored procedures that transform data through Silver and Gold layers. After running this, you will have a fully populated star schema with the initial dataset.
+
+### 03-put_delta_load.sql
+
+Loads daily incremental CSV files from `hr-analytics-data/daily-delta/` (day_01 through day_05) into the stage and processes each day sequentially through the pipeline. After running this, you will see how the SCD Type-2 dimensions track changes across multiple delta loads.
+
+### 04-tear-down.sql
+
+Suspends all tasks and drops the `HR_ANALYTICS` database along with all child objects. Use this to clean up when you are done exploring the legacy pipeline or before re-running the setup from scratch.
+
+---
+
+## dbt Project
+
+The migrated dbt project lives in `dbt-workspace/`. See [`dbt-workspace/dbt-architecture.md`](dbt-workspace/dbt-architecture.md) for full architecture documentation including the design approach, model details, testing strategy, macros, and how to run the dbt pipeline.

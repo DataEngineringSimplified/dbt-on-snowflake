@@ -1,6 +1,4 @@
-# dbt HR Analytics Pipeline
-
-A medallion-architecture (Bronze → Silver → Gold) dbt project that transforms raw HR CSV data into a dimensional star schema in Snowflake, targeting the `DBT_HR_ANALYTICS` database.
+# dbt HR Analytics — Architecture & Design
 
 ## Table of Contents
 
