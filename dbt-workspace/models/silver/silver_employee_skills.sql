@@ -1,0 +1,26 @@
+{{
+    config(
+        materialized = 'table',
+        transient = true
+    )
+}}
+
+SELECT
+    CAST(es.EMPLOYEE_SKILL_ID AS NUMBER)  AS EMPLOYEE_SKILL_ID,
+    CAST(es.EMPLOYEE_ID AS NUMBER)        AS EMPLOYEE_ID,
+    CAST(es.SKILL_ID AS NUMBER)           AS SKILL_ID,
+    TRIM(es.PROFICIENCY_LEVEL)            AS PROFICIENCY_LEVEL,
+    CAST(es.IS_PRIMARY_SKILL AS BOOLEAN)  AS IS_PRIMARY_SKILL,
+    CASE UPPER(TRIM(es.PROFICIENCY_LEVEL))
+        WHEN 'BEGINNER'     THEN 1
+        WHEN 'INTERMEDIATE' THEN 2
+        WHEN 'ADVANCED'     THEN 3
+        WHEN 'EXPERT'       THEN 4
+    END AS PROFICIENCY_RANK,
+    REGEXP_SUBSTR(es.__STG_FILE_NAME, 'day_(\\d+)', 1, 1, 'e') AS __SRC_DELTA_DAY
+
+FROM {{ source('bronze', 'EMPLOYEE_SKILLS') }} es
+WHERE es.EMPLOYEE_SKILL_ID IS NOT NULL
+  AND TRIM(es.SKILL_ID) != ''
+  AND CAST(es.EMPLOYEE_ID AS NUMBER) IN (SELECT EMPLOYEE_ID FROM {{ ref('silver_employees') }})
+  AND CAST(es.SKILL_ID AS NUMBER) IN (SELECT SKILL_ID FROM {{ ref('silver_skills') }})

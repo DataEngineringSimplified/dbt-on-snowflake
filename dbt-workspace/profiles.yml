@@ -1,0 +1,34 @@
+# Usage:
+#   dbt run                  --> uses 'dev' (default target)
+#   dbt run --target qa      --> uses 'qa'
+#   dbt run --target prod    --> uses 'prod'
+dbt_hr_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "not-required"
+      user: "not-required"
+      role: SYSADMIN
+      database: DBT_HR_ANALYTICS
+      warehouse: SANDBOX_WH
+      schema: PUBLIC
+      threads: 4
+    qa:
+      type: snowflake
+      account: "not-required"
+      user: "not-required"
+      role: SYSADMIN
+      database: DBT_HR_ANALYTICS
+      warehouse: SANDBOX_WH
+      schema: PUBLIC
+      threads: 6
+    prod:
+      type: snowflake
+      account: "not-required"
+      user: "not-required"
+      role: SYSADMIN
+      database: DBT_HR_ANALYTICS
+      warehouse: SANDBOX_WH
+      schema: PUBLIC
+      threads: 8

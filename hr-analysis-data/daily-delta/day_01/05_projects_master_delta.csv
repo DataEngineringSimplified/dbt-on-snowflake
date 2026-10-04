@@ -1,0 +1,19 @@
+project_id,project_name,company_id,owning_department_id,project_type,project_billing_type,project_budget_usd,project_status,start_date,planned_end_date,actual_end_date,added_date,updated_date,is_active,delta_date,operation_type
+10055,Synergize Visionary Action-Items Modernization,3022,1006,Modernization,Fixed Bid,1710000,Active,2026-01-04,2027-01-16,,2026-01-04,2026-09-06,True,2026-09-06,UPDATE
+10168,Aggregate Clicks-And-Mortar E-Business Modernization,3001,1002,Migration,Time & Materials,1390000,Active,2026-03-23,2026-11-11,,2026-03-23,2026-09-06,True,2026-09-06,UPDATE
+10128,Unleash Mission-Critical Vortals Data Product,3026,1005,Migration,Fixed Bid,1560000,Active,2025-10-08,2026-11-03,,2025-10-08,2026-09-06,True,2026-09-06,UPDATE
+10102,Evolve Leading-Edge Supply-Chains Application Development,3011,1007,Data Product,Time & Materials,495000,Active,2025-11-06,2026-08-12,,2025-11-06,2026-09-06,True,2026-09-06,UPDATE
+10227,Strategize Sticky Vortals Application Development,3024,1004,Platform Build,Fixed Bid,950000,Active,2025-10-08,2026-08-20,,2025-10-08,2026-09-06,True,2026-09-06,UPDATE
+10235,Evolve Killer Channels Application Development,3014,1006,Application Development,Fixed Bid,1290000,Active,2025-12-12,2027-04-09,,2025-12-12,2026-09-06,True,2026-09-06,UPDATE
+10165,Facilitate B2C Communities Managed Services,3028,1005,Managed Services,Fixed Bid,300000,Completed,2025-03-24,2026-07-17,2026-07-17,2025-03-24,2026-09-06,True,2026-09-06,UPDATE
+10118,Embrace Scalable Action-Items Data Product,3023,1005,Platform Build,Time & Materials,230000,Active,2026-03-04,2027-02-06,,2026-03-04,2026-09-06,True,2026-09-06,UPDATE
+10037,Grow Extensible Relationships Managed Services,3025,1001,Managed Services,Fixed Bid,1115000,Active,2026-02-11,2026-10-10,,2026-02-11,2026-09-06,True,2026-09-06,UPDATE
+10068,Unleash Visionary Schemas Modernization,3001,1006,Application Development,Fixed Bid,390000,Active,2025-03-22,2026-06-02,,2025-03-22,2026-09-06,True,2026-09-06,UPDATE
+10036,Redefine Cross-Media Info-Mediaries Data Product,3023,1002,Application Development,Fixed Bid,145000,On Hold,2025-10-19,2027-02-06,,2025-10-19,2026-09-06,True,2026-09-06,UPDATE
+10064,Re-Contextualize Leading-Edge Markets Managed Services,3019,1003,Modernization,Time & Materials,520000,Active,2025-11-24,2026-11-01,,2025-11-24,2026-09-06,True,2026-09-06,UPDATE
+10191,Revolutionize Clicks-And-Mortar Initiatives Platform Build,3020,1001,Application Development,Time & Materials,85000,Active,2025-10-26,2026-07-21,,2025-10-26,2026-09-06,True,2026-09-06,UPDATE
+10144,Engineer Real-Time Metrics Data Product,3023,1007,Platform Build,Fixed Bid,1350000,Completed,2025-04-20,2026-07-18,2026-07-18,2025-04-20,2026-09-06,True,2026-09-06,UPDATE
+10138,Incubate 24/365 Channels Modernization,3001,1006,Managed Services,Time & Materials,650000,Completed,2025-06-02,2026-07-15,2026-07-15,2025-06-02,2026-09-06,True,2026-09-06,UPDATE
+10192,Drive Proactive Roi Migration,3010,1002,Data Product,Time & Materials,1560000,Active,2025-07-29,2026-02-26,,2025-07-29,2026-09-06,True,2026-09-06,UPDATE
+10150,Aggregate Best-Of-Breed Partnerships Data Product,3019,1005,Modernization,Fixed Bid,1415000,Active,2025-12-16,2026-06-19,,2025-12-16,2026-09-06,True,2026-09-06,UPDATE
+10110,Revolutionize End-To-End Channels Platform Build,3012,1001,Modernization,Fixed Bid,1345000,Active,2025-10-05,2026-04-15,,2025-10-05,2026-09-06,True,2026-09-06,UPDATE

@@ -1,0 +1,32 @@
+skill_id,skill_name,skill_category,added_date,updated_date,is_active
+7001,JavaScript,Web Development,2021-03-26,2023-07-31,True
+7002,TypeScript,Web Development,2023-02-11,2024-10-11,True
+7003,React,Web Development,2024-11-14,2026-02-01,True
+7004,Node.js,Web Development,2026-05-04,2026-05-16,True
+7005,Python,Programming,2022-12-29,2024-03-29,True
+7006,Java,Programming,2025-08-20,2025-11-22,True
+7007,SQL,Data,2021-10-08,2023-12-21,True
+7008,dbt,Data,2023-02-07,2024-02-05,True
+7009,Snowflake,Data,2022-02-11,2026-04-30,True
+7010,Apache Spark,Data,2023-03-24,2026-03-14,True
+7011,Apache Kafka,Data,2023-11-04,2023-12-26,True
+7012,Airflow,Data,2026-06-05,2026-08-20,True
+7013,Databricks,Data,2026-04-02,2026-08-24,True
+7014,Power BI,Analytics,2025-07-23,2025-09-29,True
+7015,Tableau,Analytics,2023-06-21,2024-02-26,True
+7016,Google Analytics,Analytics,2022-12-25,2023-03-14,True
+7017,Android,Mobile,2022-11-09,2026-08-15,True
+7018,iOS,Mobile,2022-03-15,2025-09-16,True
+7019,Flutter,Mobile,2023-04-18,2024-09-21,True
+7020,AWS,Cloud & DevOps,2026-03-09,2026-09-04,True
+7021,Azure,Cloud & DevOps,2023-11-16,2025-11-20,True
+7022,Docker,Cloud & DevOps,2021-07-26,2023-01-30,True
+7023,Kubernetes,Cloud & DevOps,2026-04-02,2026-07-01,True
+7024,Terraform,Cloud & DevOps,2023-10-18,2025-12-13,True
+7025,Selenium,Quality Assurance,2021-01-02,2024-04-26,True
+7026,Cypress,Quality Assurance,2023-07-27,2026-03-21,True
+7027,Performance Testing,Quality Assurance,2021-07-31,2026-06-23,True
+7028,Cybersecurity,Security,2021-02-19,2022-03-02,True
+7029,Identity & Access Management,Security,2024-02-06,2025-11-03,True
+7030,SAP,Enterprise Applications,2022-01-11,2022-08-02,True
+7031,MuleSoft,Enterprise Applications,2025-10-19,2026-01-06,True

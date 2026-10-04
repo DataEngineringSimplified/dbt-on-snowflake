@@ -1,0 +1,21 @@
+project_id,project_name,company_id,owning_department_id,project_type,project_billing_type,project_budget_usd,project_status,start_date,planned_end_date,actual_end_date,added_date,updated_date,is_active,delta_date,operation_type
+10170,Synthesize Web-Enabled E-Tailers Data Product,3003,1001,Application Development,Time & Materials,1580000,Active,2025-11-20,2027-04-10,,2025-11-20,2026-09-10,True,2026-09-10,UPDATE
+10203,Architect Seamless Roi Application Development,3004,1003,Migration,Fixed Bid,500000,Active,2026-04-15,2027-01-01,,2026-04-15,2026-09-10,True,2026-09-10,UPDATE
+10211,Harness 24/365 Solutions Platform Build,3007,1006,Modernization,Time & Materials,765000,Completed,2025-07-16,2026-08-29,2026-08-29,2025-07-16,2026-09-10,True,2026-09-10,UPDATE
+10167,Grow Front-End Functionalities Application Development,3007,1006,Application Development,Time & Materials,850000,Active,2026-01-11,2027-04-16,,2026-01-11,2026-09-10,True,2026-09-10,UPDATE
+10039,Scale Holistic Info-Mediaries Data Product,3002,1006,Data Product,Time & Materials,885000,Active,2025-10-19,2026-12-30,,2025-10-19,2026-09-10,True,2026-09-10,UPDATE
+10127,Visualize Integrated E-Services Migration,3017,1002,Application Development,Time & Materials,880000,Active,2026-03-10,2027-06-17,,2026-03-10,2026-09-10,True,2026-09-10,UPDATE
+10010,Engage User-Centric Architectures Application Development,3012,1003,Data Product,Time & Materials,370000,Active,2026-02-11,2027-04-16,,2026-02-11,2026-09-10,True,2026-09-10,UPDATE
+10033,Re-Contextualize Real-Time Schemas Modernization,3019,1003,Modernization,Fixed Bid,960000,Active,2026-03-12,2026-11-26,,2026-03-12,2026-09-10,True,2026-09-10,UPDATE
+10129,Evolve Viral Solutions Migration,3008,1003,Migration,Time & Materials,920000,Active,2025-11-15,2026-08-28,,2025-11-15,2026-09-10,True,2026-09-10,UPDATE
+10152,Revolutionize Revolutionary Metrics Managed Services,3026,1005,Platform Build,Time & Materials,1825000,Completed,2026-03-19,2026-08-01,2026-08-01,2026-03-19,2026-09-10,True,2026-09-10,UPDATE
+10085,Architect Mission-Critical Platforms Modernization,3001,1005,Migration,Fixed Bid,1325000,Completed,2025-04-04,2026-07-25,2026-07-25,2025-04-04,2026-09-10,True,2026-09-10,UPDATE
+10223,Cultivate Back-End Relationships Application Development,3025,1005,Data Product,Time & Materials,1800000,Active,2025-06-09,2026-01-16,,2025-06-09,2026-09-10,True,2026-09-10,UPDATE
+10026,Drive Web-Enabled Web Services Application Development,999999,1006,Migration,Fixed Bid,315000,Active,2025-03-15,2025-12-05,,2025-03-15,2026-09-10,True,2026-09-10,UPDATE
+10224,Repurpose Open-Source Vortals Data Product,3011,1001,Application Development,Fixed Bid,180000,Active,2025-12-29,2026-08-22,,2025-12-29,2026-09-10,True,2026-09-10,UPDATE
+10217,Syndicate Scalable Platforms Migration,3016,1001,Data Product,Fixed Bid,1275000,Active,2025-04-30,2026-10-18,,2025-04-30,2026-09-10,True,2026-09-10,UPDATE
+10113,Innovate E-Business Initiatives Modernization,3023,1002,Managed Services,Time & Materials,1805000,Active,2025-09-05,2027-01-02,,2025-09-05,2026-09-10,True,2026-09-10,UPDATE
+10135,Facilitate Impactful Web Services Platform Build,3020,1008,Platform Build,Fixed Bid,815000,Active,2025-06-10,2026-09-24,,2025-06-10,2026-09-10,True,2026-09-10,UPDATE
+10234,Revolutionize Enterprise Vortals Platform Build,3001,1005,Modernization,Time & Materials,640000,Active,2026-02-15,2027-05-07,,2026-02-15,2026-09-10,True,2026-09-10,UPDATE
+10117,Aggregate Out-Of-The-Box Eyeballs Platform Build,3001,1002,Data Product,Fixed Bid,1455000,Active,2026-02-17,2027-01-26,,2026-02-17,2026-09-10,True,2026-09-10,UPDATE
+10004,Target Turn-Key Synergies Migration,3007,1008,Application Development,Fixed Bid,875000,Active,2025-12-28,2026-09-15,,2025-12-28,2026-09-10,True,2026-09-10,UPDATE

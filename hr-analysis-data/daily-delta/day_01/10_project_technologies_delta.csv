@@ -1,0 +1,14 @@
+project_technology_id,project_id,skill_id,required_proficiency_level,is_primary_technology,delta_date,operation_type
+90702,10217,7004,Expert,True,2026-09-06,UPDATE
+90333,10108,7018,Advanced,False,2026-09-06,UPDATE
+90058,10018,7006,Advanced,False,2026-09-06,UPDATE
+90235,10075,7031,Expert,False,2026-09-06,UPDATE
+90033,10010,7030,Expert,False,2026-09-06,UPDATE
+90324,10106,7025,Advanced,True,2026-09-06,UPDATE
+90411,10131,7007,Advanced,True,2026-09-06,UPDATE
+90275,10089,7002,Advanced,True,2026-09-06,UPDATE
+90068,10022,7006,Advanced,True,2026-09-06,UPDATE
+90217,10070,7024,Intermediate,False,2026-09-06,UPDATE
+90581,10180,7030,Expert,True,2026-09-06,UPDATE
+90736,999999,7014,Intermediate,True,2026-09-06,UPDATE
+90323,10105,7025,Intermediate,False,2026-09-06,UPDATE

@@ -1,0 +1,14 @@
+employee_id,access_id,employee_name,employee_email,department_id,office_id,manager_employee_id,job_title,job_level,employment_status,hire_date,added_date,updated_date,is_active,delta_date,operation_type
+5740,ACC-5740,Wazir Bawa,wazir.bawa@des-dbt.com,1005,2002,5594,Data Analyst,Consultant,Active,2024-05-25,2024-05-25,2026-09-10,True,2026-09-10,UPDATE
+5148,ACC-5148,Ranbir Khare,ranbir.khare@des-dbt.com,1001,2010,5003,Frontend Engineer,Consultant,Active,2023-01-24,2023-01-24,2026-09-10,True,2026-09-10,UPDATE
+5420,ACC-5420,Yadavi Mukhopadhyay,yadavi.mukhopadhyay@des-dbt.com,1003,2003,5362,iOS Engineer,Senior,Active,2023-12-22,2023-12-22,2026-09-10,True,2026-09-10,UPDATE
+5892,ACC-5892,Radhika Bora,radhika.bora@des-dbt.com,1007,2008,5864,Security Lead,Consultant,Active,2024-05-28,2024-05-28,2026-09-10,True,2026-09-10,UPDATE
+5671,ACC-5671,Anirudh Raja,anirudh.raja@des-dbt.com,1005,2008,5593,Analytics Engineer,Senior,Active,2024-09-03,2024-09-03,2026-09-10,True,2026-09-10,UPDATE
+5994,ACC-5994,Dipta Pandya,dipta.pandya@des-dbt.com,1008,2002,5932,Technical Lead,Associate,Active,2020-05-09,2020-05-09,2026-09-10,True,2026-09-10,UPDATE
+5159,ACC-5159,Guneet Chaudhry,guneet.chaudhry@des-dbt.com,1001,2002,5002,Frontend Engineer,Consultant,Active,2022-01-30,2022-01-30,2026-09-10,True,2026-09-10,UPDATE
+5077,ACC-5077,Jyoti Ganesh,jyoti.ganesh@des-dbt.com,1001,2013,5001,Full Stack Engineer,Consultant,Active,2023-04-29,2023-04-29,2026-09-10,True,2026-09-10,UPDATE
+5481,ACC-5481,Bhavini Badal,bhavini.badal@des-dbt.com,1004,2007,5471,DevOps Engineer,Consultant,Active,2022-07-13,2022-07-13,2026-09-10,True,2026-09-10,UPDATE
+5801,ACC-5801,Lajita Dasgupta,lajita.dasgupta@des-dbt.com,1006,2009,5745,Performance Test Engineer,Associate,Active,2022-11-16,2022-11-16,2026-09-10,True,2026-09-10,UPDATE
+5993,ACC-5993,Hema Borra,hema.borra@des-dbt.com,1008,2011,5933,ERP Consultant,Consultant,Active,2022-12-06,2022-12-06,2026-09-10,True,2026-09-10,UPDATE
+5272,ACC-5272,Joshua Vyas,joshua.vyas@des-dbt.com,1002,2013,5184,Data Engineer,Consultant,Active,2019-05-24,2019-05-24,2026-09-10,True,2026-09-10,UPDATE
+5347,ACC-5347,Zilmil Mander,zilmil.mander@des-dbt.com,1002,2003,5185,Data Engineer,Senior,Active,2025-03-02,2025-03-02,2026-09-10,True,2026-09-10,UPDATE

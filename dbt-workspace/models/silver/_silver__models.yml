@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: silver_departments
+    description: "Typed, cleansed department master data."
+    columns:
+      - name: DEPARTMENT_ID
+        tests: [unique, not_null]
+      - name: DEPARTMENT_NAME
+        tests: [not_null]
+
+  - name: silver_offices
+    description: "Typed, cleansed office master data with country standardization."
+    columns:
+      - name: OFFICE_ID
+        tests: [unique, not_null]
+
+  - name: silver_companies
+    description: "Typed, cleansed company master data with country standardization."
+    columns:
+      - name: COMPANY_ID
+        tests: [not_null]
+
+  - name: silver_employees
+    description: "Typed, cleansed employee master data with email normalization."
+    columns:
+      - name: EMPLOYEE_ID
+        tests: [not_null]
+      - name: DEPARTMENT_ID
+        tests:
+          - relationships:
+              to: ref('silver_departments')
+              field: DEPARTMENT_ID
+      - name: OFFICE_ID
+        tests:
+          - relationships:
+              to: ref('silver_offices')
+              field: OFFICE_ID
+
+  - name: silver_projects
+    description: "Typed, cleansed project master data with lifecycle state derivation."
+    columns:
+      - name: PROJECT_ID
+        tests: [not_null]
+      - name: COMPANY_ID
+        tests:
+          - relationships:
+              to: ref('silver_companies')
+              field: COMPANY_ID
+      - name: OWNING_DEPARTMENT_ID
+        tests:
+          - relationships:
+              to: ref('silver_departments')
+              field: DEPARTMENT_ID
+
+  - name: silver_employee_project_assignments
+    description: "Typed, cleansed assignment data with allocation derivation."
+    columns:
+      - name: ASSIGNMENT_ID
+        tests: [not_null]
+
+  - name: silver_employee_daily_access
+    description: "Typed, cleansed badge in/out events with time derivations."
+    columns:
+      - name: ACCESS_EVENT_ID
+        tests: [not_null]
+
+  - name: silver_skills
+    description: "Typed, cleansed skill/technology master data."
+    columns:
+      - name: SKILL_ID
+        tests: [unique, not_null]
+      - name: SKILL_NAME
+        tests: [not_null]
+
+  - name: silver_employee_skills
+    description: "Typed, cleansed employee-skill proficiency with rank derivation."
+    columns:
+      - name: EMPLOYEE_SKILL_ID
+        tests: [not_null]
+
+  - name: silver_project_technologies
+    description: "Typed, cleansed project-skill requirements with rank derivation."
+    columns:
+      - name: PROJECT_TECHNOLOGY_ID
+        tests: [not_null]

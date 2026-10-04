@@ -1,0 +1,32 @@
+employee_id,access_id,employee_name,employee_email,department_id,office_id,manager_employee_id,job_title,job_level,employment_status,hire_date,added_date,updated_date,is_active,delta_date,operation_type
+5084,ACC-5084,Osha Suri,osha.suri@des-dbt.com,1001,2010,5004,Full Stack Engineer,Consultant,Active,2019-06-27,2019-06-27,2026-09-08,True,2026-09-08,UPDATE
+5482,ACC-5482,Qushi Gola,qushi.gola@des-dbt.com,1004,2012,5471,DevOps Engineer,Consultant,Active,2019-07-01,2019-07-01,2026-09-08,True,2026-09-08,UPDATE
+5020,ACC-5020,Balveer Parmar,balveer.parmar@des-dbt.com,1001,2008,5005,Technical Lead,Consultant,Active,2020-04-15,2020-04-15,2026-09-08,True,2026-09-08,UPDATE
+5768,ACC-5768,Dakshesh Raval,dakshesh.raval@des-dbt.com,1006,2004,5744,QA Engineer,Senior,Active,2023-09-29,2023-09-29,2026-09-08,True,2026-09-08,UPDATE
+5553,ACC-5553,Lohit Vaidya,lohit.vaidya@des-dbt.com,1004,2011,5475,Site Reliability Engineer,Senior,Active,2021-08-28,2021-08-28,2026-09-08,True,2026-09-08,UPDATE
+5054,ACC-5054,Yamini Sandhu,yamini.sandhu@des-dbt.com,1001,2009,5005,Full Stack Engineer,Consultant,Active,2025-01-18,2025-01-18,2026-09-08,True,2026-09-08,UPDATE
+5975,ACC-5975,Dakshesh Gill,dakshesh.gill@des-dbt.com,1008,2002,5934,Integration Engineer,Senior,Active,2023-08-04,2023-08-04,2026-09-08,True,2026-09-08,UPDATE
+5359,ACC-5359,Hitesh Nagar,hitesh.nagar@des-dbt.com,1002,2003,5184,Data Platform Engineer,Associate,Active,2020-07-13,2020-07-13,2026-09-08,True,2026-09-08,UPDATE
+5230,ACC-5230,Oni Setty,oni.setty@des-dbt.com,1002,2013,5181,Technical Lead,Consultant,Active,2021-04-17,2021-04-17,2026-09-08,True,2026-09-08,UPDATE
+5666,ACC-5666,Tanish Grover,tanish.grover@des-dbt.com,1005,2011,5592,Data Analyst,Consultant,Active,2020-10-14,2020-10-14,2026-09-08,True,2026-09-08,UPDATE
+5071,ACC-5071,Eta Nazareth,eta.nazareth@des-dbt.com,1001,2005,5005,Full Stack Engineer,Senior,Active,2024-07-07,2024-07-07,2026-09-08,True,2026-09-08,UPDATE
+5800,ACC-5800,Anmol Bava,anmol.bava@des-dbt.com,1006,2006,5743,QA Engineer,Consultant,Active,2023-12-20,2023-12-20,2026-09-08,True,2026-09-08,UPDATE
+5981,ACC-5981,Alexander Biswas,alexander.biswas@des-dbt.com,1008,2008,5935,ERP Consultant,Associate,Active,2025-09-23,2025-09-23,2026-09-08,True,2026-09-08,UPDATE
+5668,ACC-5668,Chakrika Tara,chakrika.tara@des-dbt.com,1005,2001,5595,Technical Lead,Senior,Active,2021-11-02,2021-11-02,2026-09-08,True,2026-09-08,UPDATE
+5042,ACC-5042,Ekanta Shroff,ekanta.shroff@des-dbt.com,1001,2003,5004,Full Stack Engineer,Consultant,Active,2022-01-24,2022-01-24,2026-09-08,True,2026-09-08,UPDATE
+5773,ACC-5773,Pratyush Memon,pratyush.memon@des-dbt.com,1006,2011,5743,QA Engineer,Senior,Active,2019-06-05,2019-06-05,2026-09-08,True,2026-09-08,UPDATE
+5032,ACC-5032,Pranav Lanka,pranav.lanka@des-dbt.com,1001,2013,5001,Frontend Engineer,Associate,Active,2018-12-21,2018-12-21,2026-09-08,True,2026-09-08,UPDATE
+5973,ACC-5973,Fariq Barad,fariq.barad@des-dbt.com,1008,2003,5934,Technical Lead,Consultant,Active,2024-03-27,2024-03-27,2026-09-08,True,2026-09-08,UPDATE
+5254,ACC-5254,Matthew Sarraf,matthew.sarraf@des-dbt.com,1002,2003,5182,Technical Lead,Senior,Active,2019-03-15,2019-03-15,2026-09-08,True,2026-09-08,UPDATE
+5205,ACC-5205,Vamakshi Sen,vamakshi.sen@des-dbt.com,1002,2008,5182,Data Engineer,Associate,Active,2024-08-24,2024-08-24,2026-09-08,True,2026-09-08,UPDATE
+5860,ACC-5860,Jack Pandey,jack.pandey@des-dbt.com,1006,2003,5741,Automation Test Engineer,Associate,Active,2022-12-28,2022-12-28,2026-09-08,True,2026-09-08,UPDATE
+5021,ACC-5021,Harshil Pandya,harshil.pandya@des-dbt.com,1001,2010,5001,Full Stack Engineer,Senior,Active,2024-08-29,2024-08-29,2026-09-08,True,2026-09-08,UPDATE
+5637,ACC-5637,Rohan Korpal,rohan.korpal@des-dbt.com,1005,2001,5591,Analytics Engineer,Consultant,Active,2019-10-31,2019-10-31,2026-09-08,True,2026-09-08,UPDATE
+5157,ACC-5157,Vinaya Banik,vinaya.banik@des-dbt.com,1001,2002,5004,Technical Lead,Associate,Active,2023-06-01,2023-06-01,2026-09-08,True,2026-09-08,UPDATE
+5245,ACC-5245,Janaki Chakrabarti,janaki.chakrabarti@des-dbt.com,1002,2004,5185,Data Engineer,Associate,Active,2022-01-10,2022-01-10,2026-09-08,True,2026-09-08,UPDATE
+5130,ACC-5130,Warhi Mani,warhi.mani@des-dbt.com,1001,2001,5001,Technical Lead,Senior,Active,2023-10-05,2023-10-05,2026-09-08,True,2026-09-08,UPDATE
+5485,ACC-5485,Nidra Sharaf,nidra.sharaf@des-dbt.com,1004,2001,5473,Technical Lead,Consultant,Active,2023-01-05,2023-01-05,2026-09-08,True,2026-09-08,UPDATE
+5686,ACC-5686,Kalpit Oak,,1005,2002,5593,BI Developer,Senior,Active,2024-03-05,2024-03-05,2026-09-08,True,2026-09-08,UPDATE
+5118,ACC-5118,Rudra Sandal,rudra.sandal@des-dbt.com,1001,2005,5003,Full Stack Engineer,Consultant,Active,2019-07-23,2019-07-23,2026-09-08,True,2026-09-08,UPDATE
+5578,ACC-5578,Jyoti Sha,jyoti.sha@des-dbt.com,1004,2005,5473,Site Reliability Engineer,Senior,Active,2025-12-19,2025-12-19,2026-09-08,True,2026-09-08,UPDATE
+5971,ACC-5971,Abdul Chand,abdul.chand@des-dbt.com,1008,2012,5933,ERP Consultant,Senior,Active,2024-12-28,2024-12-28,2026-09-08,True,2026-09-08,UPDATE

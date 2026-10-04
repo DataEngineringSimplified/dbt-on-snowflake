@@ -1,0 +1,18 @@
+version: 2
+
+seeds:
+  - name: proficiency_levels
+    description: "Static reference data: the 4 proficiency bands with ordinal rank."
+    columns:
+      - name: proficiency_level
+        tests: [unique, not_null]
+      - name: proficiency_rank
+        tests: [not_null]
+
+  - name: country_mapping
+    description: "Lookup table mapping raw country strings to ISO codes and currency."
+    columns:
+      - name: source_value
+        tests: [unique, not_null]
+      - name: country_iso2
+        tests: [not_null]

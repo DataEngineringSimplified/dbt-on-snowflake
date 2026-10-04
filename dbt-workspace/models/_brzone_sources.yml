@@ -1,0 +1,83 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: DBT_HR_ANALYTICS
+    schema: BRONZE
+    description: "Raw CSV landing zone. Tables populated via `dbt run-operation load_bronze`."
+    tables:
+      - name: DEPARTMENTS
+        description: "Raw department master data."
+        columns:
+          - name: DEPARTMENT_ID
+            tests: [not_null]
+          - name: DEPARTMENT_NAME
+            tests: [not_null, unique]
+      - name: OFFICES
+        description: "Raw office master data."
+        columns:
+          - name: OFFICE_ID
+            tests: [not_null]
+      - name: COMPANIES
+        description: "Raw client company master data."
+        columns:
+          - name: COMPANY_ID
+            tests: [not_null]
+          - name: COMPANY_CLASSIFICATION
+            tests:
+              - accepted_values:
+                  values: ['Silver', 'Gold', 'Bronze']
+      - name: EMPLOYEES
+        description: "Raw employee master/org-chart data."
+        columns:
+          - name: EMPLOYEE_ID
+            tests: [not_null]
+      - name: PROJECTS
+        description: "Raw project master data."
+        columns:
+          - name: PROJECT_ID
+            tests: [not_null]
+      - name: EMPLOYEE_PROJECT_ASSIGNMENTS
+        description: "Raw employee-to-project staffing events."
+        columns:
+          - name: ASSIGNMENT_ID
+            tests: [not_null]
+      - name: EMPLOYEE_DAILY_ACCESS
+        description: "Raw badge in/out events."
+        tags:
+          - daily
+          - access-control
+          - pii
+          - badge-events
+        loaded_at_field: __STG_LOAD_TS
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: ACCESS_EVENT_ID
+            tests: [not_null]
+          - name: ACCESS_DATE
+            tests: [not_null]
+          - name: OFFICE_ID
+            tests: [not_null]
+          - name: ACCESS_ID
+            tests: [not_null]
+      - name: SKILLS
+        description: "Raw skill/technology master data."
+        columns:
+          - name: SKILL_ID
+            tests: [not_null]
+      - name: EMPLOYEE_SKILLS
+        description: "Raw employee-to-skill proficiency bridge."
+        columns:
+          - name: EMPLOYEE_SKILL_ID
+            tests: [not_null]
+      - name: PROJECT_TECHNOLOGIES
+        description: "Raw project-to-required-technology bridge."
+        columns:
+          - name: PROJECT_TECHNOLOGY_ID
+            tests: [not_null]

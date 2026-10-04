@@ -1,0 +1,14 @@
+office_id,office_code,office_city,office_country,office_region,added_date,updated_date,is_active
+2001,BLR,Bengaluru,India,APAC,2021-12-11,2024-09-24,True
+2002,HYD,Hyderabad,India,APAC,2025-05-02,2025-05-05,True
+2003,PUN,Pune,India,APAC,2025-04-24,2026-04-07,True
+2004,CHN,Chennai,India,APAC,2022-08-20,2023-04-06,True
+2005,SIN,Singapore,Singapore,APAC,2026-03-09,2026-05-08,True
+2006,SYD,Sydney,Australia,APAC,2021-03-17,2021-09-26,True
+2007,NYC,New York,United States,NA,2025-07-21,2026-03-26,True
+2008,SFO,San Francisco,United States,NA,2025-04-27,2026-04-23,True
+2009,TOR,Toronto,Canada,NA,2023-10-06,2026-08-07,True
+2010,LON,London,United Kingdom,EU,2022-11-08,2024-12-18,True
+2011,BER,Berlin,Germany,EU,2025-06-13,2026-03-17,True
+2012,AMS,Amsterdam,Netherlands,EU,2025-08-20,2026-03-27,True
+2013,DUB,Dublin,Ireland,EU,2024-09-24,2024-10-26,True

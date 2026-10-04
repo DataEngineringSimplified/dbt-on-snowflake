@@ -1,0 +1,39 @@
+project_id,project_name,company_id,owning_department_id,project_type,project_billing_type,project_budget_usd,project_status,start_date,planned_end_date,actual_end_date,added_date,updated_date,is_active,delta_date,operation_type
+10103,Deploy 24/7 E-Services Migration,3011,1008,Modernization,Time & Materials,1280000,Active,2026-02-17,2026-11-03,,2026-02-17,2026-09-09,True,2026-09-09,UPDATE
+10126,Iterate Bricks-And-Clicks Platforms Migration,3012,1008,Platform Build,Fixed Bid,940000,Active,2025-06-29,2026-10-31,,2025-06-29,2026-09-09,True,2026-09-09,UPDATE
+10019,Reinvent Front-End Convergence Platform Build,3002,1003,Modernization,Time & Materials,320000,Active,2025-12-07,2027-02-08,,2025-12-07,2026-09-09,True,2026-09-09,UPDATE
+10148,Enable Granular Solutions Platform Build,3023,1002,Application Development,Fixed Bid,1240000,Active,2025-10-01,2026-12-19,,2025-10-01,2026-09-09,True,2026-09-09,UPDATE
+10162,Visualize Granular Initiatives Migration,3024,1004,Application Development,Fixed Bid,1260000,Active,2025-07-22,2026-06-01,,2025-07-22,2026-09-09,True,2026-09-09,UPDATE
+10176,Leverage Front-End E-Business Modernization,3006,1008,Platform Build,Fixed Bid,605000,Active,2026-05-03,2027-09-09,,2026-05-03,2026-09-09,True,2026-09-09,UPDATE
+10014,Streamline Impactful Platforms Data Product,3015,1005,Data Product,Time & Materials,225000,Active,2026-03-06,2027-05-31,,2026-03-06,2026-09-09,True,2026-09-09,UPDATE
+10039,Scale Holistic Info-Mediaries Data Product,3002,1006,Data Product,Time & Materials,885000,Active,2025-10-19,2026-12-30,,2025-10-19,2026-09-09,True,2026-09-09,UPDATE
+10233,Strategize Innovative Metrics Migration,3018,1003,Managed Services,Fixed Bid,1185000,Completed,2026-02-19,2026-07-17,2026-07-17,2026-02-19,2026-09-09,True,2026-09-09,UPDATE
+10208,Unleash One-To-One Synergies Application Development,3004,1004,Migration,Time & Materials,1010000,Active,2025-09-17,2026-07-06,,2025-09-17,2026-09-09,True,2026-09-09,UPDATE
+10145,Enhance Bleeding-Edge Methodologies Migration,3027,1008,Managed Services,Time & Materials,525000,Active,2025-06-12,2026-07-14,,2025-06-12,2026-09-09,True,2026-09-09,UPDATE
+10078,Synthesize Dynamic Platforms Migration,999999,1003,Migration,Fixed Bid,1200000,Active,2025-05-31,2025-12-09,,2025-05-31,2026-09-09,True,2026-09-09,UPDATE
+10022,Deploy Wireless Partnerships Data Product,3002,1006,Application Development,Fixed Bid,990000,On Hold,2026-04-05,2026-10-31,,2026-04-05,2026-09-09,True,2026-09-09,UPDATE
+10064,Re-Contextualize Leading-Edge Markets Managed Services,3019,1003,Modernization,Time & Materials,520000,Active,2025-11-24,2026-11-01,,2025-11-24,2026-09-09,True,2026-09-09,UPDATE
+10031,Grow End-To-End Channels Data Product,3010,1001,Platform Build,Fixed Bid,65000,Active,2026-01-14,2026-12-13,,2026-01-14,2026-09-09,True,2026-09-09,UPDATE
+10143,Whiteboard Efficient Eyeballs Platform Build,3005,1002,Application Development,Fixed Bid,1215000,Completed,2026-01-17,2026-08-25,2026-08-25,2026-01-17,2026-09-09,True,2026-09-09,UPDATE
+10196,Extend Leading-Edge Deliverables Data Product,3006,1006,Platform Build,Fixed Bid,670000,On Hold,2025-08-29,2026-12-19,,2025-08-29,2026-09-09,True,2026-09-09,UPDATE
+10107,Grow E-Business E-Services Data Product,3021,1003,Data Product,Fixed Bid,525000,Completed,2026-01-11,2026-07-30,2026-07-30,2026-01-11,2026-09-09,True,2026-09-09,UPDATE
+10156,Streamline Dynamic Technologies Managed Services,3009,1005,Modernization,Time & Materials,1595000,Active,2026-01-25,2026-10-21,,2026-01-25,2026-09-09,True,2026-09-09,UPDATE
+10153,Re-Intermediate Robust Deliverables Application Development,3024,1005,Data Product,Fixed Bid,205000,Completed,2025-08-15,2026-07-25,2026-07-25,2025-08-15,2026-09-09,True,2026-09-09,UPDATE
+10203,Architect Seamless Roi Application Development,3004,1003,Migration,Fixed Bid,500000,Active,2026-04-15,2027-01-01,,2026-04-15,2026-09-09,True,2026-09-09,UPDATE
+10159,Embrace Viral Applications Migration,3020,1003,Migration,Fixed Bid,655000,Completed,2025-09-14,2026-08-19,2026-08-19,2025-09-14,2026-09-09,True,2026-09-09,UPDATE
+10058,Extend 24/7 Portals Managed Services,3006,1001,Application Development,Fixed Bid,955000,Active,2026-01-10,2027-05-25,,2026-01-10,2026-09-09,True,2026-09-09,UPDATE
+10199,Utilize Cross-Platform Architectures Data Product,3021,1005,Migration,Fixed Bid,660000,Active,2025-07-03,2026-03-29,,2025-07-03,2026-09-09,True,2026-09-09,UPDATE
+10134,Matrix Proactive Schemas Platform Build,3019,1001,Application Development,Time & Materials,1205000,On Hold,2026-03-15,2027-06-10,,2026-03-15,2026-09-09,True,2026-09-09,UPDATE
+10098,Disintermediate Interactive E-Services Modernization,3001,1002,Migration,Time & Materials,1935000,Completed,2025-08-04,2026-07-15,2026-07-15,2025-08-04,2026-09-09,True,2026-09-09,UPDATE
+10116,Re-Intermediate B2B Systems Application Development,3025,1008,Modernization,Fixed Bid,430000,Active,2026-02-10,2026-10-28,,2026-02-10,2026-09-09,True,2026-09-09,UPDATE
+10114,Harness Cross-Media Metrics Modernization,3011,1008,Modernization,Fixed Bid,105000,Completed,2025-09-02,2026-07-27,2026-07-27,2025-09-02,2026-09-09,True,2026-09-09,UPDATE
+10077,E-Enable End-To-End Roi Application Development,3005,1008,Migration,Time & Materials,1895000,Active,2025-04-03,2026-06-13,,2025-04-03,2026-09-09,True,2026-09-09,UPDATE
+10151,Grow Holistic Vortals Data Product,3017,1008,Application Development,Fixed Bid,1125000,Active,2026-04-16,2027-04-11,,2026-04-16,2026-09-09,True,2026-09-09,UPDATE
+10110,Revolutionize End-To-End Channels Platform Build,3012,1001,Modernization,Fixed Bid,1345000,Active,2025-10-05,2026-04-15,,2025-10-05,2026-09-09,True,2026-09-09,UPDATE
+10079,Synergize Holistic Deliverables Migration,3019,1004,Modernization,Fixed Bid,875000,Active,2025-12-04,2027-05-22,,2025-12-04,2026-09-09,True,2026-09-09,UPDATE
+10146,Revolutionize Compelling Channels Application Development,3019,1008,Platform Build,Fixed Bid,1100000,Active,2025-04-08,2026-07-11,,2025-04-08,2026-09-09,True,2026-09-09,UPDATE
+10219,Grow Synergistic Content Managed Services,3005,1006,Platform Build,Time & Materials,90000,Completed,2025-11-29,2026-08-17,2026-08-17,2025-11-29,2026-09-09,True,2026-09-09,UPDATE
+10016,Extend Open-Source Portals Modernization,3024,1003,Data Product,Fixed Bid,1635000,Active,2025-04-16,2026-02-12,,2025-04-16,2026-09-09,True,2026-09-09,UPDATE
+10157,Envisioneer Plug-And-Play Communities Application Development,3024,1003,Migration,Fixed Bid,495000,Completed,2026-03-17,2026-08-22,2026-08-22,2026-03-17,2026-09-09,True,2026-09-09,UPDATE
+10190,Generate Innovative Content Modernization,3019,1004,Modernization,Time & Materials,1300000,Active,2025-07-03,2026-11-29,,2025-07-03,2026-09-09,True,2026-09-09,UPDATE
+10026,Drive Web-Enabled Web Services Application Development,3004,1006,Migration,Fixed Bid,315000,Active,2025-03-15,2025-12-05,,2025-03-15,2026-09-09,True,2026-09-09,UPDATE

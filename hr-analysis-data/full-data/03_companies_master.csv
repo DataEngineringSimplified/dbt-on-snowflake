@@ -1,0 +1,29 @@
+company_id,company_name,industry,company_country,company_classification,added_date,updated_date,is_active
+3001,Mann Inc,Telecommunications,United States,Silver,2025-08-06,2026-07-14,False
+3002,Mall-Setty,Healthcare,Australia,Gold,2024-05-02,2025-03-10,True
+3003,Pant-Kadakia,Insurance,India,Gold,2024-07-13,2026-01-14,True
+3004,"Bora, Garg and Walla",Manufacturing,United States,Silver,2024-11-14,2025-03-01,False
+3005,Madan-Kanda,Banking & Financial Services,Australia,Gold,2024-08-13,2026-05-09,True
+3006,Karnik Inc,Insurance,United States,Silver,2025-04-23,2025-11-09,True
+3007,Kakar PLC,Telecommunications,India,Bronze,2025-09-20,2026-01-08,True
+3008,"Tata, Randhawa and Shanker",Retail & E-commerce,Singapore,Silver,2021-07-01,2022-03-22,True
+3009,"Yohannan, Lall and Sangha",Retail & E-commerce,United States,Bronze,2025-11-04,2026-03-05,True
+3010,Devi PLC,Travel & Hospitality,India,Gold,2023-07-08,2025-11-26,True
+3011,Dua Ltd,Healthcare,United Kingdom,Bronze,2021-08-06,2025-01-19,True
+3012,"Bhatt, Rajan and Raj",Telecommunications,India,Bronze,2024-02-08,2025-04-22,True
+3013,Apte-Contractor,Healthcare,Singapore,Gold,2024-08-06,2025-09-18,True
+3014,Oak-Choudhury,Telecommunications,Australia,Bronze,2022-05-13,2023-01-17,True
+3015,Lall PLC,Travel & Hospitality,Australia,Gold,2025-01-22,2025-11-18,True
+3016,Misra Ltd,Healthcare,India,Bronze,2023-08-07,2024-03-17,True
+3017,Edwin-Zacharia,Telecommunications,India,Bronze,2026-03-01,2026-08-21,True
+3018,Naik Group,Healthcare,Singapore,Silver,2020-10-14,2026-04-05,True
+3019,Khatri-Bhardwaj,Travel & Hospitality,United States,Silver,2022-01-23,2024-09-05,True
+3020,Chada Ltd,Manufacturing,United Kingdom,Bronze,2023-06-22,2023-09-11,True
+3021,"Dass, Dave and Soman",Healthcare,Australia,Silver,2026-02-15,2026-03-20,False
+3022,"Sampath, Kakar and Zacharia",Manufacturing,United States,Silver,2025-01-08,2026-03-01,True
+3023,"Muni, Rastogi and Prakash",Telecommunications,Australia,Silver,2023-03-13,2024-12-30,True
+3024,Kota and Sons,Travel & Hospitality,India,Silver,2021-01-16,2021-02-28,True
+3025,"Karpe, Kannan and Amble",Banking & Financial Services,United Kingdom,Silver,2021-01-31,2024-08-12,True
+3026,Bir Inc,Healthcare,United States,Bronze,2025-08-15,2025-09-11,True
+3027,Mallick Ltd,Travel & Hospitality,United States,Bronze,2023-06-21,2025-03-13,True
+3028,"Solanki, Kibe and Solanki",Insurance,Singapore,Gold,2025-04-28,2025-07-31,True

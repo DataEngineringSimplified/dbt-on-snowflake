@@ -1,0 +1,26 @@
+company_id,company_name,industry,company_country,company_classification,added_date,updated_date,is_active,delta_date,operation_type
+3008,"Tata, Randhawa and Shanker",Retail & E-commerce,Singapore,Silver,2021-07-01,2026-09-06,True,2026-09-06,UPDATE
+3004,"Bora, Garg and Walla",Manufacturing,United States,Silver,2024-11-14,2026-09-06,False,2026-09-06,UPDATE
+3013,Apte-Contractor,Healthcare,Singapore,Gold,2024-08-06,2026-09-06,True,2026-09-06,UPDATE
+3009,"Yohannan, Lall and Sangha",Retail & E-commerce,United States,Bronze,2025-11-04,2026-09-06,True,2026-09-06,UPDATE
+3015,Lall PLC,Travel & Hospitality,Australia,Gold,2025-01-22,2026-09-06,True,2026-09-06,UPDATE
+3021,"Dass, Dave and Soman",Healthcare,Australia,Silver,2026-02-15,2026-09-06,False,2026-09-06,UPDATE
+3012,"Bhatt, Rajan and Raj",Telecommunications,India,Bronze,2024-02-08,2026-09-06,True,2026-09-06,UPDATE
+3006,Karnik Inc,Insurance,United States,Silver,2025-04-23,2026-09-06,True,2026-09-06,UPDATE
+3022,"Sampath, Kakar and Zacharia",Manufacturing,United States,Silver,2025-01-08,2026-09-06,True,2026-09-06,UPDATE
+3020,Chada Ltd,Manufacturing,United Kingdom,Bronze,2023-06-22,2026-09-06,True,2026-09-06,UPDATE
+3007,Kakar PLC,Telecommunications,India,Bronze,2025-09-20,2026-09-06,True,2026-09-06,UPDATE
+3025,"Karpe, Kannan and Amble",Banking & Financial Services,United Kingdom,Silver,2021-01-31,2026-09-06,True,2026-09-06,UPDATE
+3003,Pant-Kadakia,Insurance,India,Gold,2024-07-13,2026-09-06,True,2026-09-06,UPDATE
+3010,Devi PLC,Travel & Hospitality,India,Gold,2023-07-08,2026-09-06,True,2026-09-06,UPDATE
+3011,Dua Ltd,Healthcare,United Kingdom,Bronze,2021-08-06,2026-09-06,True,2026-09-06,UPDATE
+3016,Misra Ltd,Healthcare,India,Bronze,2023-08-07,2026-09-06,True,2026-09-06,UPDATE
+3017,,Telecommunications,India,Bronze,2026-03-01,2026-09-06,True,2026-09-06,UPDATE
+3027,Mallick Ltd,Travel & Hospitality,United States,Bronze,2023-06-21,2026-09-06,True,2026-09-06,UPDATE
+3026,Bir Inc,Healthcare,United States,Bronze,2025-08-15,2026-09-06,True,2026-09-06,UPDATE
+3028,"Solanki, Kibe and Solanki",Insurance,Singapore,Gold,2025-04-28,2026-09-06,True,2026-09-06,UPDATE
+3018,Naik Group,Healthcare,Singapore,Silver,2020-10-14,2026-09-06,True,2026-09-06,UPDATE
+3024,Kota and Sons,Travel & Hospitality,India,Silver,2021-01-16,2026-09-06,True,2026-09-06,UPDATE
+3023,"Muni, Rastogi and Prakash",Telecommunications,Australia,Silver,2023-03-13,2026-09-06,True,2026-09-06,UPDATE
+3005,Madan-Kanda,Banking & Financial Services,Australia,Gold,2024-08-13,2026-09-06,True,2026-09-06,UPDATE
+3002,Mall-Setty,Healthcare,Australia,Gold,2024-05-02,2026-09-06,True,2026-09-06,UPDATE

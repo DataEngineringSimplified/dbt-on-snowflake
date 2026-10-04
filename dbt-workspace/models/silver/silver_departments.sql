@@ -1,0 +1,18 @@
+{{
+    config(
+        materialized = 'table',
+        transient = true
+    )
+}}
+
+SELECT
+    CAST(DEPARTMENT_ID AS NUMBER)    AS DEPARTMENT_ID,
+    TRIM(DEPARTMENT_CODE)            AS DEPARTMENT_CODE,
+    TRIM(DEPARTMENT_NAME)            AS DEPARTMENT_NAME,
+    TRY_TO_DATE(ADDED_DATE)         AS ADDED_DATE,
+    TRY_TO_DATE(UPDATED_DATE)       AS UPDATED_DATE,
+    CAST(IS_ACTIVE AS BOOLEAN)       AS IS_ACTIVE
+
+FROM {{ source('bronze', 'DEPARTMENTS') }}
+WHERE DEPARTMENT_ID IS NOT NULL
+  AND TRIM(DEPARTMENT_NAME) != ''

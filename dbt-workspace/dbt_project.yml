@@ -1,0 +1,35 @@
+name: 'dbt_hr_analytics'
+version: '1.0.0'
+config-version: 2
+profile: 'dbt_hr_analytics'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+# macro-paths: ["macros/ingestion", "macros/utils", "macros/governance, macros/hooks"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_hr_analytics:
+    silver:
+      +schema: SILVER
+      +materialized: table
+      +transient: true
+    gold:
+      +schema: GOLD
+      +materialized: table
+
+seeds:
+  dbt_hr_analytics:
+    +schema: BRONZE
+
+snapshots:
+  dbt_hr_analytics:
+    +target_schema: SNAPSHOT
+

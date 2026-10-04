@@ -1,0 +1,27 @@
+source_value,country_iso2,country_iso3,country_name_standardized,default_currency_code
+US,US,USA,United States,USD
+USA,US,USA,United States,USD
+United States,US,USA,United States,USD
+UK,GB,GBR,United Kingdom,GBP
+United Kingdom,GB,GBR,United Kingdom,GBP
+GB,GB,GBR,United Kingdom,GBP
+India,IN,IND,India,INR
+IN,IN,IND,India,INR
+Germany,DE,DEU,Germany,EUR
+DE,DE,DEU,Germany,EUR
+Canada,CA,CAN,Canada,CAD
+CA,CA,CAN,Canada,CAD
+Australia,AU,AUS,Australia,AUD
+AU,AU,AUS,Australia,AUD
+Japan,JP,JPN,Japan,JPY
+JP,JP,JPN,Japan,JPY
+Singapore,SG,SGP,Singapore,SGD
+SG,SG,SGP,Singapore,SGD
+France,FR,FRA,France,EUR
+FR,FR,FRA,France,EUR
+Brazil,BR,BRA,Brazil,BRL
+BR,BR,BRA,Brazil,BRL
+Netherlands,NL,NLD,Netherlands,EUR
+NL,NL,NLD,Netherlands,EUR
+Ireland,IE,IRL,Ireland,EUR
+IE,IE,IRL,Ireland,EUR

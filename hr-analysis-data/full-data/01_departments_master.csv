@@ -1,0 +1,9 @@
+department_id,department_code,department_name,added_date,updated_date,is_active
+1001,WEB,Web Development,2024-05-10,2024-05-31,True
+1002,BIG,Big Data Engineering,2022-04-05,2023-03-31,True
+1003,MOB,Mobile Applications,2024-11-30,2026-02-08,True
+1004,CLD,Cloud & DevOps,2025-10-23,2025-11-19,True
+1005,ANA,Data Analytics,2023-02-07,2023-03-17,True
+1006,QAT,Quality Assurance,2021-12-07,2024-04-30,True
+1007,SEC,Cybersecurity,2020-10-29,2021-12-27,True
+1008,ENT,Enterprise Applications,2024-06-01,2025-08-25,True

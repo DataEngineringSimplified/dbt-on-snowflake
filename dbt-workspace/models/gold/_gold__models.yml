@@ -1,0 +1,233 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: "Conformed calendar dimension."
+    columns:
+      - name: DATE_HK
+        tests: [unique, not_null]
+      - name: DATE_DAY
+        tests: [unique, not_null]
+
+  - name: dim_department
+    description: "Department dimension with SCD Type-2 history."
+    columns:
+      - name: DEPARTMENT_HK
+        tests: [unique, not_null]
+      - name: DEPARTMENT_ID
+        tests: [not_null]
+
+  - name: dim_office
+    description: "Office dimension with SCD Type-2 history."
+    columns:
+      - name: OFFICE_HK
+        tests: [unique, not_null]
+      - name: OFFICE_ID
+        tests: [not_null]
+
+  - name: dim_company
+    description: "Client company dimension with SCD Type-2 history."
+    columns:
+      - name: COMPANY_HK
+        tests: [unique, not_null]
+      - name: COMPANY_ID
+        tests: [not_null]
+
+  - name: dim_employee
+    description: "Employee dimension with SCD Type-2 history."
+    columns:
+      - name: EMPLOYEE_HK
+        tests: [unique, not_null]
+      - name: EMPLOYEE_ID
+        tests: [not_null]
+
+  - name: dim_project
+    description: "Project dimension with SCD Type-2 history."
+    columns:
+      - name: PROJECT_HK
+        tests: [unique, not_null]
+      - name: PROJECT_ID
+        tests: [not_null]
+
+  - name: dim_skill
+    description: "Skill/technology dimension (Type 1)."
+    columns:
+      - name: SKILL_HK
+        tests: [unique, not_null]
+      - name: SKILL_ID
+        tests: [unique, not_null]
+
+  - name: dim_proficiency
+    description: "Static reference dimension of proficiency bands."
+    columns:
+      - name: PROFICIENCY_HK
+        tests: [unique, not_null]
+      - name: PROFICIENCY_LEVEL
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['Beginner', 'Intermediate', 'Advanced', 'Expert']
+
+  - name: dim_assignment_role
+    description: "Static reference dimension of assignment roles."
+    columns:
+      - name: ASSIGNMENT_ROLE_HK
+        tests: [unique, not_null]
+      - name: ASSIGNMENT_ROLE
+        tests: [unique, not_null]
+
+  - name: fact_employee_daily_access
+    description: "Badge in/out event fact."
+    columns:
+      - name: ACCESS_EVENT_HK
+        tests: [unique, not_null]
+      - name: EMPLOYEE_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_employee')
+              field: EMPLOYEE_HK
+      - name: OFFICE_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_office')
+              field: OFFICE_HK
+      - name: ACCESS_DATE
+        tests: [not_null]
+      - name: ACCESS_EVENT_TYPE
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['IN', 'OUT']
+
+  - name: fact_employee_project_assignment
+    description: "Employee-to-project staffing fact with effective dating."
+    tests:
+      - no_overlapping_effective_dates:
+          partition_key: ASSIGNMENT_ID
+          severity: error
+    columns:
+      - name: ASSIGNMENT_VERSION_HK
+        tests: [unique, not_null]
+      - name: EMPLOYEE_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_employee')
+              field: EMPLOYEE_HK
+      - name: PROJECT_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_project')
+              field: PROJECT_HK
+      - name: ASSIGNMENT_ROLE_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_assignment_role')
+              field: ASSIGNMENT_ROLE_HK
+      - name: ALLOCATION_PERCENT
+        tests: [not_null]
+      - name: __EFFECTIVE_FROM_DATE
+        tests: [not_null]
+      - name: __EFFECTIVE_TO_DATE
+        tests: [not_null]
+
+  - name: fct_project_budget_plan
+    description: "Project budget fact with effective dating."
+    tests:
+      - no_overlapping_effective_dates:
+          partition_key: PROJECT_ID
+          severity: error
+    columns:
+      - name: PROJECT_BUDGET_VERSION_HK
+        tests: [unique, not_null]
+      - name: PROJECT_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_project')
+              field: PROJECT_HK
+      - name: COMPANY_HK
+        tests:
+          - relationships:
+              to: ref('dim_company')
+              field: COMPANY_HK
+      - name: OWNING_DEPARTMENT_HK
+        tests:
+          - relationships:
+              to: ref('dim_department')
+              field: DEPARTMENT_HK
+      - name: PROJECT_BUDGET_USD
+        tests: [not_null]
+      - name: __EFFECTIVE_FROM_DATE
+        tests: [not_null]
+      - name: __EFFECTIVE_TO_DATE
+        tests: [not_null]
+
+  - name: br_employee_skill
+    description: "Employee-to-skill proficiency bridge with effective dating."
+    tests:
+      - no_overlapping_effective_dates:
+          partition_key: EMPLOYEE_HK
+          severity: error
+    columns:
+      - name: EMPLOYEE_SKILL_VERSION_HK
+        tests: [unique, not_null]
+      - name: EMPLOYEE_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_employee')
+              field: EMPLOYEE_HK
+      - name: SKILL_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_skill')
+              field: SKILL_HK
+      - name: PROFICIENCY_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_proficiency')
+              field: PROFICIENCY_HK
+      - name: __EFFECTIVE_FROM_DATE
+        tests: [not_null]
+      - name: __EFFECTIVE_TO_DATE
+        tests: [not_null]
+
+  - name: br_project_skill_requirement
+    description: "Project-to-skill requirement bridge with effective dating."
+    tests:
+      - no_overlapping_effective_dates:
+          partition_key: PROJECT_HK
+          severity: error
+    columns:
+      - name: PROJECT_TECHNOLOGY_VERSION_HK
+        tests: [unique, not_null]
+      - name: PROJECT_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_project')
+              field: PROJECT_HK
+      - name: SKILL_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_skill')
+              field: SKILL_HK
+      - name: PROFICIENCY_HK
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_proficiency')
+              field: PROFICIENCY_HK
+      - name: __EFFECTIVE_FROM_DATE
+        tests: [not_null]
+      - name: __EFFECTIVE_TO_DATE
+        tests: [not_null]

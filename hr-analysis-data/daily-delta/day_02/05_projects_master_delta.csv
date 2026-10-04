@@ -1,0 +1,28 @@
+project_id,project_name,company_id,owning_department_id,project_type,project_billing_type,project_budget_usd,project_status,start_date,planned_end_date,actual_end_date,added_date,updated_date,is_active,delta_date,operation_type
+10231,Reinvent Intuitive Networks Modernization,3010,1002,Platform Build,Fixed Bid,335000,Completed,2025-07-29,2026-08-17,2026-08-17,2025-07-29,2026-09-07,True,2026-09-07,UPDATE
+10148,Enable Granular Solutions Platform Build,3023,1002,Application Development,Fixed Bid,1240000,Active,2025-10-01,2026-12-19,,2025-10-01,2026-09-07,True,2026-09-07,UPDATE
+10049,Drive Value-Added E-Services Application Development,3003,1002,Modernization,Time & Materials,1635000,Active,2026-01-04,2026-09-16,,2026-01-04,2026-09-07,True,2026-09-07,UPDATE
+10066,Generate Cross-Media Systems Platform Build,3027,1005,Platform Build,Time & Materials,385000,Active,2026-04-28,2027-01-27,,2026-04-28,2026-09-07,True,2026-09-07,UPDATE
+10012,Synthesize Global Functionalities Managed Services,3024,1003,Modernization,Fixed Bid,1855000,Active,2025-05-20,2026-06-28,,2025-05-20,2026-09-07,True,2026-09-07,UPDATE
+10182,Maximize E-Business Info-Mediaries Application Development,3012,1006,Managed Services,Fixed Bid,190000,Completed,2025-06-03,2026-07-10,2026-07-10,2025-06-03,2026-09-07,True,2026-09-07,UPDATE
+10112,Incentivize Interactive Partnerships Modernization,3011,1003,Data Product,Time & Materials,575000,Active,2026-01-13,2026-07-30,,2026-01-13,2026-09-07,True,2026-09-07,UPDATE
+10001,Strategize Magnetic Networks Modernization,3027,1003,Managed Services,Fixed Bid,230000,Active,2025-10-09,2027-01-10,,2025-10-09,2026-09-07,True,2026-09-07,UPDATE
+10134,Matrix Proactive Schemas Platform Build,3019,1001,Application Development,Time & Materials,1205000,On Hold,2026-03-15,2027-06-10,,2026-03-15,2026-09-07,True,2026-09-07,UPDATE
+10207,Transition End-To-End E-Tailers Platform Build,3011,1007,Application Development,Fixed Bid,635000,Active,2026-03-12,2026-11-03,,2026-03-12,2026-09-07,True,2026-09-07,UPDATE
+10138,Incubate 24/365 Channels Modernization,3001,1006,Managed Services,Time & Materials,650000,Completed,2025-06-02,2026-07-15,2026-07-15,2025-06-02,2026-09-07,True,2026-09-07,UPDATE
+10176,Leverage Front-End E-Business Modernization,3006,1008,Platform Build,Fixed Bid,605000,Active,2026-05-03,2027-09-09,,2026-05-03,2026-09-07,True,2026-09-07,UPDATE
+10185,Drive Rich Models Modernization,999999,1007,Application Development,Fixed Bid,1295000,Active,2025-10-03,2026-05-14,,2025-10-03,2026-09-07,True,2026-09-07,UPDATE
+10190,Generate Innovative Content Modernization,3019,1004,Modernization,Time & Materials,1300000,Active,2025-07-03,2026-11-29,,2025-07-03,2026-09-07,True,2026-09-07,UPDATE
+10189,Architect Value-Added Functionalities Modernization,3002,1007,Platform Build,Fixed Bid,1785000,On Hold,2026-02-12,2027-05-12,,2026-02-12,2026-09-07,True,2026-09-07,UPDATE
+10172,Matrix Efficient E-Business Application Development,3006,1002,Platform Build,Fixed Bid,800000,Active,2025-03-08,2026-05-01,,2025-03-08,2026-09-07,True,2026-09-07,UPDATE
+10051,Generate Robust Supply-Chains Platform Build,3001,1006,Application Development,Time & Materials,570000,Active,2025-09-19,2026-12-22,,2025-09-19,2026-09-07,True,2026-09-07,UPDATE
+10094,Strategize Clicks-And-Mortar Paradigms Data Product,3023,1004,Modernization,Time & Materials,1510000,Active,2025-09-12,2027-01-27,,2025-09-12,2026-09-07,True,2026-09-07,UPDATE
+10111,Strategize 24/365 Schemas Platform Build,3017,1003,Managed Services,Fixed Bid,1925000,On Hold,2025-05-29,2026-08-20,,2025-05-29,2026-09-07,True,2026-09-07,UPDATE
+10018,Cultivate 24/365 Networks Application Development,3011,1007,Managed Services,Time & Materials,295000,Active,2025-04-26,2026-07-17,,2025-04-26,2026-09-07,True,2026-09-07,UPDATE
+10171,Deploy Visionary Infrastructures Data Product,3004,1002,Platform Build,Fixed Bid,1730000,Active,2025-09-24,2027-02-17,,2025-09-24,2026-09-07,True,2026-09-07,UPDATE
+10085,Architect Mission-Critical Platforms Modernization,3001,1005,Migration,Fixed Bid,1325000,Completed,2025-04-04,2026-07-25,2026-07-25,2025-04-04,2026-09-07,True,2026-09-07,UPDATE
+10160,Enable Impactful E-Markets Platform Build,3024,1003,Data Product,Fixed Bid,185000,Active,2025-12-27,2027-05-19,,2025-12-27,2026-09-07,True,2026-09-07,UPDATE
+10081,Re-Contextualize Best-Of-Breed Experiences Modernization,3021,1006,Data Product,Fixed Bid,1910000,Active,2025-04-05,2026-06-20,,2025-04-05,2026-09-07,True,2026-09-07,UPDATE
+10170,Synthesize Web-Enabled E-Tailers Data Product,3003,1001,Application Development,Time & Materials,1580000,Active,2025-11-20,2027-04-10,,2025-11-20,2026-09-07,True,2026-09-07,UPDATE
+10032,Seize World-Class Info-Mediaries Modernization,3007,1006,Application Development,Fixed Bid,1465000,Completed,2025-05-17,2026-07-09,2026-07-09,2025-05-17,2026-09-07,True,2026-09-07,UPDATE
+10228,Monetize Plug-And-Play Interfaces Modernization,3014,1005,Modernization,Fixed Bid,930000,Active,2025-04-05,2026-05-21,,2025-04-05,2026-09-07,True,2026-09-07,UPDATE
