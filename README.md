@@ -11,6 +11,7 @@ Provide a hands-on, end-to-end reference for migrating a Snowflake medallion-arc
 ## Table of Contents
 
 - [Legacy ETL Setup](#legacy-etl-setup)
+- [GitHub Actions — Automated Deployment](#github-actions--automated-deployment)
 - [Source Data — ER Diagram](#source-data--er-diagram)
 - [dbt Project](#dbt-project)
 
@@ -35,6 +36,31 @@ Loads daily incremental CSV files from `hr-analytics-data/daily-delta/` (day_01 
 ### 04-tear-down.sql
 
 Suspends all tasks and drops the `HR_ANALYTICS` database along with all child objects. Use this to clean up when you are done exploring the legacy pipeline or before re-running the setup from scratch.
+
+---
+
+## GitHub Actions — Automated Deployment
+
+A GitHub Actions workflow (`.github/workflows/deploy-legacy-etl.yml`) can deploy the legacy pipeline automatically using SnowSQL. It is triggered manually from the **Actions** tab.
+
+### Setup
+
+Add the following secrets in your repository under **Settings > Secrets and variables > Actions**:
+
+| Secret | Description |
+|---|---|
+| `SNOWFLAKE_ACCOUNT` | Snowflake account identifier (e.g., `xy12345.us-east-1`) |
+| `SNOWFLAKE_USER` | Snowflake username |
+| `SNOWFLAKE_PASSWORD` | Snowflake password |
+| `SNOWFLAKE_ROLE` | Role to use (e.g., `ACCOUNTADMIN` or `SYSADMIN`) |
+| `SNOWFLAKE_WAREHOUSE` | Warehouse to use (e.g., `SANDBOX_WH`) |
+
+### Running the Workflow
+
+1. Go to the **Actions** tab in your GitHub repository.
+2. Select **Deploy Legacy ETL Pipeline** from the left sidebar.
+3. Click **Run workflow**.
+4. Optionally check **Skip data load steps** to only deploy database objects without loading CSV data.
 
 ---
 
@@ -70,3 +96,7 @@ Incremental change files organized by day (day_01 through day_05). Each day cont
 ## dbt Project
 
 The migrated dbt project lives in `dbt-workspace/`. See [`dbt-workspace/dbt-architecture.md`](dbt-workspace/dbt-architecture.md) for full architecture documentation including the design approach, model details, testing strategy, macros, and how to run the dbt pipeline.
+
+### Quick Start with Snowsight
+
+You can also upload the `dbt-workspace/` folder directly to a Snowsight workspace and start running dbt from the browser. Go to **Projects > Workspaces** in Snowsight, create a new workspace, upload the contents of `dbt-workspace/`, and run `dbt build` from the workspace terminal.
