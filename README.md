@@ -74,22 +74,30 @@ The `hr-analytics-data/` folder contains synthetic HR data organized as 10 entit
 
 Base dataset loaded once during initial setup.
 
-| # | File | Description |
-|---|---|---|
-| 1 | `01_departments_master.csv` | Department hierarchy (codes, names, active status) |
-| 2 | `02_offices_master.csv` | Office locations with city, country, and region |
-| 3 | `03_companies_master.csv` | Client companies with industry and classification |
-| 4 | `04_employees_master.csv` | Employee records with job title, level, department, and manager |
-| 5 | `05_projects_master.csv` | Projects with budget, status, dates, and owning department |
-| 6 | `06_employee_project_assignments.csv` | Staffing assignments with role and allocation percentage |
-| 7 | `07_employee_daily_access.csv` | Badge in/out events per employee per office |
-| 8 | `08_skills_master.csv` | Skill and technology catalog |
-| 9 | `09_employee_skills.csv` | Employee-skill proficiency mapping |
-| 10 | `10_project_technologies.csv` | Project technology requirements |
+| # | File | Rows | Description |
+|---|---|---|---|
+| 1 | `01_departments_master.csv` | 8 | Department hierarchy (codes, names, active status) |
+| 2 | `02_offices_master.csv` | 13 | Office locations with city, country, and region |
+| 3 | `03_companies_master.csv` | 28 | Client companies with industry and classification |
+| 4 | `04_employees_master.csv` | 1,000 | Employee records with job title, level, department, and manager |
+| 5 | `05_projects_master.csv` | 240 | Projects with budget, status, dates, and owning department |
+| 6 | `06_employee_project_assignments.csv` | 1,058 | Staffing assignments with role and allocation percentage |
+| 7 | `07_employee_daily_access.csv` | 95,646 | Badge in/out events per employee per office |
+| 8 | `08_skills_master.csv` | 31 | Skill and technology catalog |
+| 9 | `09_employee_skills.csv` | 3,484 | Employee-skill proficiency mapping |
+| 10 | `10_project_technologies.csv` | 777 | Project technology requirements |
 
 ### Daily Deltas (`hr-analytics-data/daily-delta/`)
 
 Incremental change files organized by day (day_01 through day_05). Each day contains only the entities that changed -- not all 10 files appear in every day. These deltas drive SCD Type-2 versioning in the Gold layer.
+
+| Day | Files | Total Rows |
+|---|---|---|
+| day_01 | companies (25), employees (22), projects (18), employee_skills (20), project_technologies (13) | 98 |
+| day_02 | companies (28), projects (27), employee_daily_access (49) | 104 |
+| day_03 | employees (31), employee_project_assignments (28), employee_daily_access (24), employee_skills (19) | 102 |
+| day_04 | employees (34), projects (38), employee_project_assignments (31) | 103 |
+| day_05 | employees (13), projects (20), employee_project_assignments (30), employee_daily_access (20), employee_skills (19) | 102 |
 
 ---
 
