@@ -16,6 +16,7 @@ Provide a hands-on, end-to-end reference for migrating a Snowflake medallion-arc
 - [GitHub Actions — Automated Deployment](#github-actions--automated-deployment)
 - [Source Data — ER Diagram](#source-data--er-diagram)
 - [dbt Project](#dbt-project)
+- [Reference Diagrams](#reference-diagrams)
 
 ---
 
@@ -110,3 +111,27 @@ The migrated dbt project lives in `dbt-workspace/`. See [`dbt-workspace/dbt-arch
 ### Quick Start with Snowsight
 
 You can also upload the `dbt-workspace/` folder directly to a Snowsight workspace and start running dbt from the browser. Go to **Projects > Workspaces** in Snowsight, create a new workspace, upload the contents of `dbt-workspace/`, and run `dbt build` from the workspace terminal.
+
+---
+
+## Reference Diagrams
+
+### dbt_project.yml — The Control File
+
+![dbt_project.yml overview](reference/dbt-project-summary.png)
+
+### dbt_project.yml — Configuration to Snowflake Models
+
+![dbt_project.yml to Snowflake](reference/full-dbt-project-yml.png)
+
+### dbt_project.yml — Project Configuration Flow
+
+![dbt_project.yml config flow](reference/dbt_project_yml.png)
+
+### profiles.yml — Environment Targets (Dev, QA, Prod)
+
+![profiles.yml environments](reference/dbt-profile-yml.png)
+
+### dbt Seeds — Small Business-Maintained Reference Data
+
+![dbt seeds](reference/dbt-seed.png)
