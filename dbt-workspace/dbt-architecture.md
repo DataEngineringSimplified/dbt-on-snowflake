@@ -4,7 +4,6 @@
 
 - [Architecture Overview](#architecture-overview)
 - [Design Approach](#design-approach)
-- [Database & Schema Layout](#database--schema-layout)
 - [Source Data (Bronze Layer)](#source-data-bronze-layer)
 - [Silver Layer](#silver-layer)
 - [Gold Layer](#gold-layer)
@@ -65,7 +64,7 @@
 └───────────────────────────────────────────────────────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────────────┐
-│  SNAPSHOTS SCHEMA                                                     │
+│  SNAPSHOT SCHEMA                                                      │
 │                                                                       │
 │  snap_skills: dbt-managed SCD-2 history for skill attribute changes   │
 │  (check strategy on SKILL_NAME, SKILL_CATEGORY, IS_ACTIVE)           │
@@ -128,7 +127,7 @@ This means the pipeline supports both **full-refresh** (base + all deltas) and *
 | `BRONZE` | Raw landing zone | External load (COPY INTO) | Isolate raw data; append-only |
 | `SILVER` | Cleansed intermediate | Transient tables | Save storage costs; rebuildable from Bronze |
 | `GOLD` | Star schema + seeds | Persistent tables | Production-grade; supports Time Travel |
-| `SNAPSHOTS` | dbt-managed SCD-2 | Snapshot tables | Separate from curated Gold to avoid confusion |
+| `SNAPSHOT` | dbt-managed SCD-2 | Snapshot tables | Separate from curated Gold to avoid confusion |
 | `GOVERNANCE` | Tags for classification | Snowflake tags | Centralized governance metadata |
 | `UTIL` | File formats, stages | Infrastructure objects | Utility objects shared across layers |
 
@@ -263,12 +262,12 @@ silver_emp_proj_assignments ─────────────────�
 
 ## Seeds
 
-Seeds are version-controlled CSV files loaded into the Gold schema as reference tables.
+Seeds are version-controlled CSV files loaded into the Bronze schema as reference tables.
 
 | Seed | Target Schema | Rows | Purpose | Consumed By |
 |---|---|---|---|---|
-| `country_mapping` | GOLD | 26 | Maps raw country strings (e.g., "US", "USA", "United States") to ISO-2/ISO-3 codes, standardized names, and default currency codes | `silver_offices`, `silver_companies` |
-| `proficiency_levels` | GOLD | 4 | Static reference of proficiency bands with ordinal rank (Beginner=1 through Expert=4) | `dim_proficiency` |
+| `country_mapping` | BRONZE | 26 | Maps raw country strings (e.g., "US", "USA", "United States") to ISO-2/ISO-3 codes, standardized names, and default currency codes | `silver_offices`, `silver_companies` |
+| `proficiency_levels` | BRONZE | 4 | Static reference of proficiency bands with ordinal rank (Beginner=1 through Expert=4) | `dim_proficiency` |
 
 ### Why Seeds over Hardcoded CTEs?
 
@@ -282,11 +281,11 @@ Country mapping was originally hardcoded as a `VALUES` CTE in both `silver_offic
 
 ## Snapshots
 
-Snapshots live in a dedicated `SNAPSHOTS` schema, separate from the curated Gold layer.
+Snapshots live in a dedicated `SNAPSHOT` schema, separate from the curated Gold layer.
 
 | Snapshot | Target Schema | Strategy | Unique Key | Check Columns | Source | Description |
 |---|---|---|---|---|---|---|
-| `snap_skills` | SNAPSHOTS | `check` | SKILL_ID | SKILL_NAME, SKILL_CATEGORY, IS_ACTIVE | `silver_skills` | Tracks skill attribute changes over time with dbt-managed `dbt_valid_from` / `dbt_valid_to` timestamps |
+| `snap_skills` | SNAPSHOT | `check` | SKILL_ID | SKILL_NAME, SKILL_CATEGORY, IS_ACTIVE | `silver_skills` | Tracks skill attribute changes over time with dbt-managed `dbt_valid_from` / `dbt_valid_to` timestamps |
 
 ### Why a Separate Snapshots Schema?
 
@@ -306,6 +305,7 @@ Snapshots live in a dedicated `SNAPSHOTS` schema, separate from the curated Gold
 | `setup_infrastructure` | `macros/setup_infrastructure.sql` | Creates the CSV file format (`CSV_FF`), external S3 stage (`MY_S3_STAGE`), and 4 governance tags in a single idempotent operation. |
 | `load_bronze` | `macros/load_bronze.sql` | Loads base CSV files from stage into Bronze tables. Creates tables if they don't exist. Supports optional `day_folder` argument for targeted delta loads. Captures `METADATA$FILENAME` and `METADATA$START_SCAN_TIME`. |
 | `load_bronze_deltas` | `macros/load_bronze_deltas.sql` | Iterates through daily-incremental delta folders (day_01 through day_05) and loads each into the corresponding Bronze table. |
+| `check_source_freshness` | `macros/check_source_freshness.sql` | Checks staleness of a Bronze table by comparing `MAX(load timestamp)` to current time. Logs PASS/WARN/ERROR based on configurable hour thresholds. |
 | `create_semantic_view` | `macros/create_semantic_view.sql` | Creates the `HR_ANALYTICS_MODEL` Snowflake Semantic View over the full Gold star schema with annotated relationships, facts, and dimensions. |
 
 ---
@@ -325,16 +325,23 @@ Declared in `_sources.yml`, `_silver__models.yml`, `_gold__models.yml`, and `_se
 | `relationships` | 5 | Silver FKs → Silver parents | Validates referential integrity (e.g., employee.DEPARTMENT_ID → department.DEPARTMENT_ID) |
 | `accepted_values` | 1 | dim_proficiency.PROFICIENCY_LEVEL | Ensures only valid proficiency bands exist |
 
-### Custom Singular Tests (4 tests, in `tests/` folder)
+### Custom Singular Tests (5 tests, in `tests/singular/`)
 
 Cross-table business rule validations that cannot be expressed as generic YAML tests:
 
-| Test File | Severity | What It Checks | Current Result |
-|---|---|---|---|
-| `assert_no_assignment_date_violations.sql` | error | Assignment end dates must not precede start dates | PASS |
-| `assert_no_orphaned_access_events.sql` | error | Every badge event must resolve to a known employee | PASS |
-| `assert_no_budget_without_assignments.sql` | error | Active projects with budget must have at least one staffing assignment | PASS |
-| `assert_no_employee_allocation_overcommit.sql` | warn | Flags employees whose current total allocation exceeds 100% | WARN (34 employees) |
+| Test File | Severity | What It Checks |
+|---|---|---|
+| `assert_no_assignment_date_violations.sql` | error | Assignment end dates must not precede start dates |
+| `assert_no_orphaned_access_events.sql` | error | Every badge event must resolve to a known employee |
+| `assert_no_budget_without_assignments.sql` | error | Active projects with budget must have at least one staffing assignment |
+| `assert_no_employee_allocation_overcommit.sql` | warn | Flags employees whose current total allocation exceeds 100% |
+| `assert_no_skill_proficiency_downgrade.sql` | error | An employee's proficiency for a given skill should never decrease over time |
+
+### Custom Generic Test (1 test, in `tests/generic/`)
+
+| Test File | Purpose |
+|---|---|
+| `no_overlapping_effective_dates.sql` | Reusable test that ensures SCD-2 effective date ranges never overlap for the same entity. Can be applied to any model with effective-dated versioning. |
 
 ### How Custom Tests Work
 
@@ -388,48 +395,48 @@ ALTER TABLE DBT_HR_ANALYTICS.GOLD.DIM_EMPLOYEE
 
 ```bash
 # 1. Set up infrastructure (file format, stage, governance tags)
-dbt run-operation setup_infrastructure --project-dir dbt-snowflake-project
+dbt run-operation setup_infrastructure --project-dir dbt-workspace
 
 # 2. Load base data into Bronze
-dbt run-operation load_bronze --project-dir dbt-snowflake-project
+dbt run-operation load_bronze --project-dir dbt-workspace
 
 # 3. Load daily incremental deltas into Bronze
-dbt run-operation load_bronze_deltas --project-dir dbt-snowflake-project
+dbt run-operation load_bronze_deltas --project-dir dbt-workspace
 
 # 4. Full build: seeds + models + snapshot + tests (in dependency order)
-dbt build --project-dir dbt-snowflake-project
+dbt build --project-dir dbt-workspace
 
 # 5. Create semantic view (optional, for Cortex Analyst)
-dbt run-operation create_semantic_view --project-dir dbt-snowflake-project
+dbt run-operation create_semantic_view --project-dir dbt-workspace
 ```
 
 ### Incremental Delta Load (subsequent runs)
 
 ```bash
 # Load a specific day's delta
-dbt run-operation load_bronze --args '{day_folder: day_06}' --project-dir dbt-snowflake-project
+dbt run-operation load_bronze --args '{day_folder: day_06}' --project-dir dbt-workspace
 
 # Rebuild Silver + Gold with new data
-dbt build --project-dir dbt-snowflake-project
+dbt build --project-dir dbt-workspace
 ```
 
 ### Individual Operations
 
 ```bash
 # Seeds only
-dbt seed --project-dir dbt-snowflake-project
+dbt seed --project-dir dbt-workspace
 
 # Models only (no tests)
-dbt run --project-dir dbt-snowflake-project
+dbt run --project-dir dbt-workspace
 
 # Snapshot only
-dbt snapshot --project-dir dbt-snowflake-project
+dbt snapshot --project-dir dbt-workspace
 
 # Tests only
-dbt test --project-dir dbt-snowflake-project
+dbt test --project-dir dbt-workspace
 
 # Specific model and its downstream
-dbt build --select silver_employees+ --project-dir dbt-snowflake-project
+dbt build --select silver_employees+ --project-dir dbt-workspace
 ```
 
 ---
@@ -439,11 +446,9 @@ dbt build --select silver_employees+ --project-dir dbt-snowflake-project
 | Setting | Value |
 |---|---|
 | **Project name** | `dbt_hr_analytics` |
-| **dbt version** | 1.9.4 |
-| **Snowflake adapter** | 1.9.2 |
 | **Database** | `DBT_HR_ANALYTICS` |
 | **Profile** | `dbt_hr_analytics` |
-| **Threads** | 8 |
+| **Threads** | 4 (dev), 6 (qa), 8 (prod) |
 | **Role** | `SYSADMIN` |
 | **Warehouse** | `SANDBOX_WH` |
 
@@ -453,14 +458,14 @@ dbt build --select silver_employees+ --project-dir dbt-snowflake-project
 | `BRONZE` | Raw landing zone | COPY INTO (external load) |
 | `SILVER` | Cleansed models | Transient tables |
 | `GOLD` | Star schema + seeds | Persistent tables |
-| `SNAPSHOTS` | dbt snapshots | Snapshot tables |
+| `SNAPSHOT` | dbt snapshots | Snapshot tables |
 | `GOVERNANCE` | Classification tags | Snowflake tags |
 
 ---
 
 ## DAG Overview
 
-Total objects managed by dbt: **24 models, 2 seeds, 1 snapshot, 72 tests**
+Total objects managed by dbt: **24 models, 2 seeds, 1 snapshot, 74 tests**
 
 ```
 Sources (10 Bronze tables)
@@ -472,13 +477,13 @@ Sources (10 Bronze tables)
     │       │       ├── Gold Facts (3 models)
     │       │       └── Gold Bridges (2 models)
     │       │
-    │       └── Snapshots (1 snapshot → SNAPSHOTS schema)
+    │       └── Snapshots (1 snapshot → SNAPSHOT schema)
     │
-    └── Seeds (2 CSVs → GOLD schema)
+    └── Seeds (2 CSVs → BRONZE schema)
             │
             └── Gold Dimensions (dim_proficiency)
 
-Tests: 68 generic (YAML) + 4 custom (SQL) = 72 total
+Tests: 68 generic (YAML) + 5 singular + 1 generic custom = 74 total
 ```
 
 Latest build: **99/99 — PASS=98, WARN=1, ERROR=0**

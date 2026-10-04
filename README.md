@@ -1,5 +1,7 @@
 # dbt on Snowflake — HR Analytics
 
+[![Watch the video](https://img.youtube.com/vi/cEZYNAa5sHg/maxresdefault.jpg)](https://youtu.be/cEZYNAa5sHg)
+
 This workspace demonstrates how to migrate a legacy Snowflake stored-procedure-based ETL pipeline into a modern dbt project. It contains the complete legacy pipeline (stored procedures, streams, and tasks), the sample HR dataset, and the fully migrated dbt project -- all in one repo. Clone the repository and follow along step by step to run the legacy pipeline first, then build and compare the dbt equivalent side by side.
 
 ## Objective
