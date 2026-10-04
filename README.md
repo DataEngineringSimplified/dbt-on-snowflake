@@ -8,6 +8,34 @@ Provide a hands-on, end-to-end reference for migrating a Snowflake medallion-arc
 
 ![Legacy vs dbt](reference/dbt-project-in-snowflake.png)
 
+## Table of Contents
+
+- [Legacy ETL Setup](#legacy-etl-setup)
+- [Source Data — ER Diagram](#source-data--er-diagram)
+- [dbt Project](#dbt-project)
+
+---
+
+## Legacy ETL Setup
+
+The `legacy-etl-setup/` folder contains the original stored-procedure-based pipeline. Run these files in a Snowflake worksheet in the order listed below.
+
+### 01-hr-analytics-deploy.sql
+
+Creates the `HR_ANALYTICS` database with the full medallion architecture -- schemas, tables, stored procedures, streams, tasks, file formats, and an internal stage. After running this, you will have the complete database structure with all pipeline objects ready but no data loaded yet.
+
+### 02-put_full_load.sql
+
+Loads the base CSV files from `hr-analytics-data/full-data/` into the internal stage and runs COPY INTO to populate the Bronze tables. Then triggers the stored procedures that transform data through Silver and Gold layers. After running this, you will have a fully populated star schema with the initial dataset.
+
+### 03-put_delta_load.sql
+
+Loads daily incremental CSV files from `hr-analytics-data/daily-delta/` (day_01 through day_05) into the stage and processes each day sequentially through the pipeline. After running this, you will see how the SCD Type-2 dimensions track changes across multiple delta loads.
+
+### 04-tear-down.sql
+
+Suspends all tasks and drops the `HR_ANALYTICS` database along with all child objects. Use this to clean up when you are done exploring the legacy pipeline or before re-running the setup from scratch.
+
 ---
 
 ## Source Data — ER Diagram
@@ -36,28 +64,6 @@ Base dataset loaded once during initial setup.
 ### Daily Deltas (`hr-analytics-data/daily-delta/`)
 
 Incremental change files organized by day (day_01 through day_05). Each day contains only the entities that changed -- not all 10 files appear in every day. These deltas drive SCD Type-2 versioning in the Gold layer.
-
----
-
-## Legacy ETL Setup
-
-The `legacy-etl-setup/` folder contains the original stored-procedure-based pipeline. Run these files in a Snowflake worksheet in the order listed below.
-
-### 01-hr-analytics-deploy.sql
-
-Creates the `HR_ANALYTICS` database with the full medallion architecture -- schemas, tables, stored procedures, streams, tasks, file formats, and an internal stage. After running this, you will have the complete database structure with all pipeline objects ready but no data loaded yet.
-
-### 02-put_full_load.sql
-
-Loads the base CSV files from `hr-analytics-data/full-data/` into the internal stage and runs COPY INTO to populate the Bronze tables. Then triggers the stored procedures that transform data through Silver and Gold layers. After running this, you will have a fully populated star schema with the initial dataset.
-
-### 03-put_delta_load.sql
-
-Loads daily incremental CSV files from `hr-analytics-data/daily-delta/` (day_01 through day_05) into the stage and processes each day sequentially through the pipeline. After running this, you will see how the SCD Type-2 dimensions track changes across multiple delta loads.
-
-### 04-tear-down.sql
-
-Suspends all tasks and drops the `HR_ANALYTICS` database along with all child objects. Use this to clean up when you are done exploring the legacy pipeline or before re-running the setup from scratch.
 
 ---
 
